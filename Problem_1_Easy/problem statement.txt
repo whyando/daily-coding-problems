@@ -1,0 +1,29 @@
+Daily Coding Problem: Problem #1 [Easy]
+
+Good morning! Here's your coding interview problem for today.
+
+This problem was recently asked by Google.
+
+Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+Bonus: Can you do this in one pass?
+
+
+MY ANSWER:
+O(N^2) solution:
+iterate each pair of indices and compute their sum
+
+O(N ln N) solution:
+sort the list and then double iterator, one from the front the other from the back
+
+O(N) solution:
+do a counting sort type technique, when we read x in the list,
+    set hit[x] = true
+    and check hit[K - x]
+
+depending on the domain, could be done using a
+ - std::unordered_set (hashmap)
+ - std::set (red-black tree) [O(NlogN)]
+ - std::vector or array
