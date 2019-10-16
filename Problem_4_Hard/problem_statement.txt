@@ -18,4 +18,4 @@ a single pass will set the boolean array, then we do a second pass until we find
 linear time YES, but we must make a modification in order to solve in constant space
 
 we note that the input array may contain non-positive integers that contribute nothing to the answer
-therefore, we can use the negative sign to stand in for our boolean array
+therefore, we can erase the negatives we're given (set to 0) and then use the negative sign to stand in for our boolean array
