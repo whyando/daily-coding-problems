@@ -1,0 +1,24 @@
+Good morning! Here's your coding interview problem for today.
+
+This problem was asked by Facebook.
+
+Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+
+For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+
+You can assume that the messages are decodable. For example, '001' is not allowed.
+
+MY ANSWER:
+my first thought is to looks towards dynamic programming solution
+
+    ie dp[X] = no. of ways the first X digits can be decoded
+    
+    with the folowing calcuation for dp[X] with recursion on dp[X-1] and dp[X-2]
+
+    dp[X] = 0
+    if {last digit alone makes a valid character mapping ie 1-9}
+        dp[X] += dp[X-1]
+    if {last two digits make a valid character mapping ie 10-26}
+        dp[X] += dp[X-2]
+
+another solution might be to divide and conquer since any digit that is not 1,2 definitely marks the end of a character so we can split our string in two and solve seperately
