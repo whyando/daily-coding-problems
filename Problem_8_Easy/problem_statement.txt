@@ -1,0 +1,36 @@
+Daily Coding Problem: Problem #8 [Easy]
+
+A unival tree (which stands for "universal value") is a tree where all nodes under it have the same value.
+
+Given the root to a binary tree, count the number of unival subtrees.
+
+For example, the following tree has 5 unival subtrees:
+
+   0
+  / \
+ 1   0
+    / \
+   1   0
+  / \
+ 1   1
+
+
+MY SOLUTION:
+Since this problem is labelled easy, I wonder whether it has a quick recusive solution:
+
+consider vertex X with children C_i (ie C_1, C_2)
+let T(X) refer to the subtree rooted at X
+
+T(X) is unival
+iff
+T(C_i) is unival for all i && val(X) = val(C_i) for all i
+
+
+so we can run a dfs (depth first search),
+and for each vertex we record:
+    1. the number of unival subtrees
+    2. whether the subtree rooted here is unival
+
+if we know this info for every child of a vertex, we can compute these values for the node itself
+
+I didn't write code for this one so I hope this explanation suffices
