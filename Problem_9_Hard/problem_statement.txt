@@ -1,0 +1,26 @@
+Daily Coding Problem: Problem #9 [Hard]
+
+Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be 0 or negative.
+
+For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1, 1, 5] should return 10, since we pick 5 and 5.
+
+Follow-up: Can you do this in O(N) time and constant space?
+
+
+MY SOLUTION:
+
+my first instinct is dynamic programming:
+
+dp1[i] = largest_sum of non-adjacent numbers where we DO select the number in position i
+dp2[i] = largest_sum of non-adjacent numbers where we DONT select the number in position i
+
+with recursion
+
+dp1[i] = A[i] + dp2[i-1]
+dp2[i] = max(dp1[i-1], dp2[i-1])
+
+we could actually eliminate dp2[i] from this system of equations by substituting the first equation into the second if we really wanted
+
+
+SOLUTION to the follow-up:
+its already O(N) and pretty easy to adjust to constant space, since instead of keeping the whole array of dp[i] in memory (length N), we just keep the last value
