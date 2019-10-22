@@ -1,0 +1,22 @@
+Daily Coding Problem: Problem #11 [Medium]
+
+Implement an autocomplete system. That is, given a query string s and a set of all possible query strings, return all strings in the set that have s as a prefix.
+
+For example, given the query string de and the set of strings [dog, deer, deal], return [deer, deal].
+
+Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
+
+MY ANSWER:
+the data structure we're looking for here is commonly called a trie
+
+its a rooted tree, where every possible prefix has its own vertex
+(but instead of storing the full prefix on each vertex, we only store the last character)
+each vertex has up to 26 children, for each of the prefixs obtained by adding another character
+
+[You might be thinking this would require way too much memory but it's less than what would be required to simply store the given list of possible query strings
+also there's a variant of this which reduces the memory even more by combining vertices with only one child]
+
+EDIT:
+thinking about this again, the easiest implementation is probably to ignore everything above and just to sort the set of strings in alphabetical order making our own dictionary
+then for each query, the answer will be some contiguous section of the list
+we binary search twice to find the start and end points
