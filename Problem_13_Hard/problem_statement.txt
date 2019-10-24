@@ -1,0 +1,25 @@
+Daily Coding Problem: Problem #13 [Hard]
+
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
+
+MY ANSWER:
+lets do a dual iterator strategy where we work with some interval,
+
+if the interval contains at most k distinct characters, we make the interval longer by increasing the right iterator
+otherwise, we make the interval shorter by increasing the left iterator,
+
+
+we keep track of the longest (meeting the criteria) interval we have seen
+also importantly: we keep track of the exact number of each character inside our interval, therefore we know if we have at most k distinct characters or not
+
+
+I claim that the longest substring with k distinct characters will be looked at by our algorithm
+
+proof: suppose that one such longest substring S is on indexes [a, b]
+
+then at some point, the left iterator will become a, then the left iterator will not increase until the right iterator is b+1
+
+what if the right iterator was already b+1 or greater?:
+    then we have previously seen a substring meeting the criteria longer than S
