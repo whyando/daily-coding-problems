@@ -1,0 +1,17 @@
+Daily Coding Problem: Problem #14 [Medium]
+
+The area of a circle is defined as πr^2. Estimate π to 3 decimal places using a Monte Carlo method.
+
+Hint: The basic equation of a circle is x2 + y2 = r2.
+
+MY ANSWER:
+consider a square of side length 2, with an inscribed circle of radius 1
+
+if we pick a point randomly inside the square, the probablity it also lies inside the circle is PI/4
+since PI and 4 are the respective areas of the circle and square
+
+so we repeatedly pick points in the square and let the fraction that also lie inside the circle be our estimate for PI/4
+
+
+since the question asks for 3dp specifically, we might ask how many points must we pick to get this accuracy
+to answer this we would turn to ideas of binomial distributions and confidence intervals maybe with some normal distribution approximations thrown in
