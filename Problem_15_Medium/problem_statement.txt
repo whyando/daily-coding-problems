@@ -1,0 +1,11 @@
+Daily Coding Problem: Problem #15 [Medium]
+
+Given a stream of elements too large to store in memory,
+pick a random element from the stream with uniform probability.
+
+MY ANSWER:
+hold a single number at any given time,
+and replace by the i_th value in the stream, with probability 1/i
+
+for all i:
+after we have processed the i_th value, every element indexed from 1 to i is equally likely
